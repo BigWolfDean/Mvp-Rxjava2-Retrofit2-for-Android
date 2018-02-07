@@ -8,5 +8,5 @@
 
 本框架虽不完美，但是小型项目完全够用，代码中也有具体的例子，大家可以参考一下。
 
-
+项目的讲解地址：<a href="http://blog.csdn.net/qq_29080105/article/details/79278140">一款基于MVP、RxJava2和Retrofit2的Android开发框架</a>
 

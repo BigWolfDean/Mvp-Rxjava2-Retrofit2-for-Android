@@ -53,21 +53,36 @@ public class InTheaterMoviePresenter implements IPresenter {
 
     }
 
+    /**
+     * 获取豆瓣正在上映的电影信息
+     *
+     * @param apiKey
+     * @param city
+     * @param start
+     * @param count
+     */
     public void getMovieInfo(String apiKey, String city, int start, int count) {
         dataManager.getMovieInTheater(apiKey, city, start, count).compose(RxSchedulers.<InTheaterBean>compose()).subscribe(new BaseObserver<InTheaterBean>() {
             @Override
             protected void onHandleSuccess(InTheaterBean inTheaterBean) {
+                // 成功的操作
                 movieView.setResponse(inTheaterBean.toString());
             }
 
             @Override
             protected void onHandleError(Throwable e) {
+                // 失败的操作
                 movieView.setError(e.getMessage());
             }
 
         });
     }
 
+    /**
+     * 设置错误信息
+     *
+     * @param errorInfo
+     */
     public void setErrorInfo(String errorInfo) {
         movieView.setError(errorInfo);
     }
