@@ -2,7 +2,7 @@ package com.lang.demo.mvp.presenter;
 
 import android.content.Intent;
 
-import com.lang.demo.model.InTheaterModel;
+import com.lang.demo.bean.InTheaterBean;
 import com.lang.demo.mvp.manager.DataManager;
 import com.lang.demo.mvp.view.IBaseView;
 import com.lang.demo.mvp.view.InTheaterMovieView;
@@ -54,10 +54,10 @@ public class InTheaterMoviePresenter implements IPresenter {
     }
 
     public void getMovieInfo(String apiKey, String city, int start, int count) {
-        dataManager.getMovieInTheater(apiKey, city, start, count).compose(RxSchedulers.<InTheaterModel>compose()).subscribe(new BaseObserver<InTheaterModel>() {
+        dataManager.getMovieInTheater(apiKey, city, start, count).compose(RxSchedulers.<InTheaterBean>compose()).subscribe(new BaseObserver<InTheaterBean>() {
             @Override
-            protected void onHandleSuccess(InTheaterModel inTheaterModel) {
-                movieView.setResponse(inTheaterModel.toString());
+            protected void onHandleSuccess(InTheaterBean inTheaterBean) {
+                movieView.setResponse(inTheaterBean.toString());
             }
 
             @Override

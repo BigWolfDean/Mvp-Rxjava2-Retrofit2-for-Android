@@ -1,4 +1,4 @@
-package com.lang.demo.model;
+package com.lang.demo.bean;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * 推荐使用插件  GsonFormat
  */
 
-public class InTheaterModel implements Serializable {
+public class InTheaterBean implements Serializable {
 
 
     /**
@@ -486,7 +486,7 @@ public class InTheaterModel implements Serializable {
 
     @Override
     public String toString() {
-        return "InTheaterModel{" +
+        return "InTheaterBean{" +
                 "count=" + count +
                 ", start=" + start +
                 ", total=" + total +

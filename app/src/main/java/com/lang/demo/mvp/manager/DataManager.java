@@ -1,6 +1,6 @@
 package com.lang.demo.mvp.manager;
 
-import com.lang.demo.model.InTheaterModel;
+import com.lang.demo.bean.InTheaterBean;
 import com.lang.demo.retrofit.RetrofitFactory;
 import com.lang.demo.retrofit.RetrofitService;
 
@@ -30,7 +30,7 @@ public class DataManager {
      * @param count
      * @return
      */
-    public Observable<InTheaterModel> getMovieInTheater(String apiKey, String city, int start, int count) {
+    public Observable<InTheaterBean> getMovieInTheater(String apiKey, String city, int start, int count) {
         return retrofitService.getMovieInTheater(apiKey, city, start, count);
     }
 

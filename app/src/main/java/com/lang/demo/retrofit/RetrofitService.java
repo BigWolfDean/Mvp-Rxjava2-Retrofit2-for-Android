@@ -1,6 +1,6 @@
 package com.lang.demo.retrofit;
 
-import com.lang.demo.model.InTheaterModel;
+import com.lang.demo.bean.InTheaterBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -22,10 +22,10 @@ public interface RetrofitService {
      * @return Observable实例
      */
     @GET("movie/in_theaters")
-    Observable<InTheaterModel> getMovieInTheater(@Query("apikey") String token,
-                                                 @Query("city") String city,
-                                                 @Query("start") int start,
-                                                 @Query("count") int count);
+    Observable<InTheaterBean> getMovieInTheater(@Query("apikey") String token,
+                                                @Query("city") String city,
+                                                @Query("start") int start,
+                                                @Query("count") int count);
 
 
 }
